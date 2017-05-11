@@ -26,7 +26,7 @@
                         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
                             <span class="sr-only">Toggle navigation</span> 
                         </button> 
-                        <a class="navbar-brand" href="paginaDoAdministrador.jsp">Resolvex - Adminstrador - ${adm.nome}</a>
+                        <a class="navbar-brand" href="paginaDoAdministrador.jsp">Resolvex - Adminstrador</a>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

@@ -117,7 +117,9 @@ public class Cliente extends Usuario implements Serializable{
 
     @Override
     public String toString() {
-        return "Cliente{" + "cpf=" + cpf + ", telefone=" + telefone + ", foto=" + foto + ", endereco=" + endereco + '}';
+        return "Cliente{" + super.toString() + "cpf=" + cpf + ", telefone=" + telefone + ", foto=" + foto + ", endereco=" + endereco + '}';
     }
+
+    
     
 }

@@ -12,6 +12,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+        <script src="js/jquery.maskedinput.min.js" type="text/javascript"></script>
+        <script src="js/funcoes.js"></script>
         <title>Cadastro do Cliente</title>
     </head>
     <body>

@@ -44,7 +44,7 @@
                                 <a href="" class="dropdown-toggle" data-toggle="dropdown">Solicitações de Serviços</a>
                                 <ul class="nav dropdown-menu">
                                     <li><a href="cadastroDeSolicitacao.jsp">Solicitar</a></li>
-                                    <li><a href="#">Solicitações atendidas</a></li>
+                                    <li><a href="solicitacoesAtendidasCliente.jsp">Solicitações atendidas</a></li>
                                     <li><a href="listarSolicitacoesEmAndamentoCliente.jsp">Solicitações em andamento</a></li>
                                 </ul>
                             </li>

@@ -2,7 +2,6 @@ br\edu\ifpb\praticas\projeto\entidades\Usuario_.class
 br\edu\ifpb\praticas\projeto\commands\Command.class
 br\edu\ifpb\praticas\projeto\dao\interfaces\ClienteDao.class
 br\edu\ifpb\praticas\projeto\dao\impl\ComentarioDaoBD.class
-br\edu\ifpb\praticas\projeto\teste\NewMain.class
 br\edu\ifpb\praticas\projeto\services\impl\SolicitacaoServicoServiceBD.class
 br\edu\ifpb\praticas\projeto\entidades\Orcamento_.class
 br\edu\ifpb\praticas\projeto\entidades\Cliente_.class

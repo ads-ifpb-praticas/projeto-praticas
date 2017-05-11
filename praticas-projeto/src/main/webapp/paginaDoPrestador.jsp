@@ -32,7 +32,7 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li><a href="listarSolicitacoesEmAndamentoPrestador.jsp">Solicitações de serviços</a></li>
-                            <li><a href="#">Solicitações atendidas</a></li>
+                            <li><a href="solicitacoesAtendidasPrestador.jsp">Solicitações atendidas</a></li>
                             <li><a href="#">Agenda</a></li>
                             <li><a href="Controller?command=Sair">Sair</a></li>
                         </ul>

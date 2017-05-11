@@ -161,7 +161,7 @@ public class PrestadorDeServico extends Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "PrestadorDeServico{" + "cpf=" + cpf + ", foto=" + foto + ", tipo_servico=" + tipo_servico + ", documento=" + documento + ", nota=" + nota + ", comentarios=" + comentarios + ", acesso=" + acesso + '}';
+        return "PrestadorDeServico{" + super.toString() + "cpf=" + cpf + ", foto=" + foto + ", tipo_servico=" + tipo_servico + ", documento=" + documento + ", nota=" + nota + ", comentarios=" + comentarios + ", acesso=" + acesso + '}';
     }
 
 }

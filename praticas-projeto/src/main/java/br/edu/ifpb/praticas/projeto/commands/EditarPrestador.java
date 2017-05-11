@@ -25,8 +25,10 @@ public class EditarPrestador implements Command {
     public void execute(HttpServletRequest request, HttpServletResponse response) {
 
         try{
-            PrestadorDeServico pds = dadosDoPrestadorDeServico(request);
+            
             PrestadorDeServicoService service = new PrestadorDeServicoServiceBD();
+            PrestadorDeServico pds = dadosDoPrestadorDeServico(request, service);
+            
 
             String url = request.getHeader("referer");
             request.setAttribute("pagina", url);
@@ -48,13 +50,10 @@ public class EditarPrestador implements Command {
         }
     }
 
-    private PrestadorDeServico dadosDoPrestadorDeServico(HttpServletRequest request) throws IOException, ServletException {
-        PrestadorDeServico pds = new PrestadorDeServico();
+    private PrestadorDeServico dadosDoPrestadorDeServico(HttpServletRequest request, PrestadorDeServicoService service) throws IOException, ServletException {
 
-        if (request.getParameter("id") != null) {
-            int id = Integer.parseInt(request.getParameter("id"));
-            pds.setId(id);
-        }
+        int id = Integer.parseInt(request.getParameter("id"));
+        PrestadorDeServico pds = service.getPrestadorDeServico(id);
 
         if (request.getParameter("nome") != null) {
             String nome = request.getParameter("nome");
@@ -80,10 +79,6 @@ public class EditarPrestador implements Command {
             String tipo_servico = request.getParameter("tipo_servico");
             pds.setTipo_servico(TipoServico.valueOf(tipo_servico));
         }
-
-        pds.setTipo_usuario(TipoUsuario.PRESTADOR_DE_SERVICO);
-
-        pds.setAcesso(false);
 
         return pds;
     }

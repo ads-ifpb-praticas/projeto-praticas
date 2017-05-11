@@ -29,9 +29,13 @@ public class SolicitacaoServicoDaoBD implements SolicitacaoServicoDao {
         em = ProdutorEntityManager.criaEntityManager();
         boolean retorno = false;
         try {
+            System.out.println("passsou1");
             em.getTransaction().begin();
+            System.out.println("passsou2");
             em.persist(solicitacaoServico);
+            System.out.println("passsou3");
             em.getTransaction().commit();
+            System.out.println("passsou4");
             retorno = true;
         } catch (Exception e) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", e);
@@ -66,9 +70,13 @@ public class SolicitacaoServicoDaoBD implements SolicitacaoServicoDao {
         em = ProdutorEntityManager.criaEntityManager();
         boolean retorno = false;
         try {
+            System.out.println("passsou1");
             em.getTransaction().begin();
+            System.out.println("passsou2");
             em.merge(solicitacaoServico);
+            System.out.println("passsou3");
             em.getTransaction().commit();
+            System.out.println("passsou4");
             retorno = true;
         } catch (Exception e) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", e);
@@ -110,24 +118,14 @@ public class SolicitacaoServicoDaoBD implements SolicitacaoServicoDao {
         return solicitacaoServico;
     }
 
+    
     @Override
-    public List<SolicitacaoServico> solicitacoesDisponiveis(PrestadorDeServico prestador) {
-        //List<SolicitacaoServico> solicitacoes = listar();
-//        List<SolicitacaoServico> solicitacoes2 = new ArrayList<>();
-//        for (SolicitacaoServico solicitacao : solicitacoes) {
-//            List<Orcamento> orcamentos = solicitacao.getOrcamentos();
-//            for (Orcamento orcamento : orcamentos) {
-//                if(!orcamento.getPrestadorDeServico().equals(prestador)){
-//                    solicitacoes2.add(solicitacao);
-//                }
-//            }
-//        }
-        //return solicitacoes;
+     public List<SolicitacaoServico> solicitacoesOrcamento(PrestadorDeServico prestador) {
         List<SolicitacaoServico> solicitacoes = null;
         em = ProdutorEntityManager.criaEntityManager();
         try {
-            Query query = em.createQuery("SELECT s FROM SolicitacaoServico s JOIN Orcamento o WHERE s.orcamentos.prestadorDeServico = :prestador");
-            query.setParameter("prestador", prestador);
+            Query query = em.createQuery("SELECT s FROM SolicitacaoServico s JOIN s.orcamentos o WHERE o.prestadorDeServico.id = :prestador");
+            query.setParameter("prestador", prestador.getId());
             solicitacoes = query.getResultList();
         } catch (Exception e) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", e);
@@ -136,6 +134,11 @@ public class SolicitacaoServicoDaoBD implements SolicitacaoServicoDao {
             ProdutorEntityManager.finaliza(em);
         }
         return solicitacoes;
+    }
+
+    @Override
+    public List<SolicitacaoServico> solicitacoesDisponiveis(PrestadorDeServico prestador) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

@@ -34,6 +34,7 @@
                             <td>DE</td>
                             <td>ATÉ</td>
                             <td>VER ORÇAMENTOS</td>
+                            <td>REMOVER</td>
                         </tr>
                         <c:forEach var="solicitacao" items="${listaSolicitacoes.listar()}">
                             <c:if test="${solicitacao.status == 'DISPONIVEL' && solicitacao.cliente.id == cliente.id}">
@@ -44,7 +45,10 @@
                                     <td>${solicitacao.hora_inicial}</td>
                                     <td>${solicitacao.hora_final}</td>
                                     <td>
-                                        <a class="btn btn-primary btn-block" href="Controller?command=">Orçamentos</a>
+                                        <a class="btn btn-primary btn-block" href="listarOrcamentos.jsp?id=${solicitacao.id}">Orçamentos</a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger btn-block" href="Controller?command=RemoverSolicitacao&id=${solicitacao.id}">Remover</a>
                                     </td>
                                 </tr>
                             </c:if>

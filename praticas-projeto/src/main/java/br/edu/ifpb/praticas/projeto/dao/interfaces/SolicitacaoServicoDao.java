@@ -17,4 +17,5 @@ public interface SolicitacaoServicoDao {
     List<SolicitacaoServico> listar();
     SolicitacaoServico getSolicitacaoServico(int id);
     List<SolicitacaoServico> solicitacoesDisponiveis(PrestadorDeServico prestador);
+    List<SolicitacaoServico> solicitacoesOrcamento(PrestadorDeServico prestador);
 }

@@ -41,35 +41,6 @@ public class ClienteServiceBD implements ClienteService{
     public Cliente autenticar(String email, String senha) {
         return FactoryDao.createFactory(FactoryDao.DAO_BD).criaCliente().autenticar(email, senha);
     }
-  
-//    @Override
-//    public boolean salvar(Cliente cliente) {
-//        return FactoryDao.createFactory(FactoryDao.DAO_BD).criaCliente().salvar(cliente);
-//    }
-//
-//    @Override
-//    public boolean remover(int id) {
-//        return FactoryDao.createFactory(FactoryDao.DAO_BD).criaCliente().remover(id);
-//    }
-//
-//    @Override
-//    public boolean editar(Cliente cliente) {
-//        return FactoryDao.createFactory(FactoryDao.DAO_BD).criaCliente().editar(cliente);
-//    }
-//
-//    @Override
-//    public Cliente getCliente(int id) {
-//        return FactoryDao.createFactory(FactoryDao.DAO_BD).criaCliente().getCliente(id);
-//    }
-//
-//    @Override
-//    public List<Cliente> listar() {
-//        return FactoryDao.createFactory(FactoryDao.DAO_BD).criaCliente().listar();
-//    }
-//
-//    @Override
-//    public Cliente autenticar(String email, String senha) {
-//        return FactoryDao.createFactory(FactoryDao.DAO_BD).criaCliente().autenticar(email, senha);
-//    }
+
     
 }

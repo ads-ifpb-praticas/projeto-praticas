@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<jsp:useBean id="listaPrestadores" class="br.edu.ifpb.praticas.projeto.services.impl.PrestadorDeServicoServiceBD" scope="page"/>
+<jsp:useBean id="serviceSolicitacao" class="br.edu.ifpb.praticas.projeto.services.impl.SolicitacaoServicoServiceBD" scope="page"/>
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,6 +33,9 @@
                 <br>
                 <p style="font-size:1.5em;"><strong>Faixa de datas: </strong>De ${solicitacao.data_inicial} à ${solicitacao.data_final}</p>
                 <p style="font-size:1.5em;"><strong>Faixa de horários: </strong>De ${solicitacao.hora_inicial} à ${solicitacao.hora_final}</p>
+                <c:if test="${serviceSolicitacao.solicitacoesOrcamento(pds) == solicitacao}">
+                    <p>vc já enviou</p>
+                </c:if>
                 <div class="form-group col-md-6">
                     <a class="btn btn-primary btn-block" href="cadastroOrcamento.jsp?idSolicitacao=${solicitacao.id}">Enviar Orçamento</a>
                 </div>

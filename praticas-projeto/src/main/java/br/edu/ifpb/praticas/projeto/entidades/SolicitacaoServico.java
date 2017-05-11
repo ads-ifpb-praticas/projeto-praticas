@@ -16,6 +16,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
@@ -51,10 +52,11 @@ public class SolicitacaoServico implements Serializable{
     @Column(name = "status", length = 30, nullable = false)
     @Enumerated(EnumType.STRING)
     private StatusSolicitacao status;
+    @JoinColumn(name = "Chave_Solicitacao")
     @OneToMany(mappedBy = "solicitacaoServico", cascade = CascadeType.ALL)
     private List<Orcamento> orcamentos = new ArrayList<>();
             
-    public SolicitacaoServico(int id, TipoServico servico, LocalDate dataInicial, LocalDate dataFinal, LocalTime horaInicial, LocalTime horaFinal, Cliente cliente, StatusSolicitacao status) {
+    public SolicitacaoServico(int id, TipoServico servico, LocalDate dataInicial, LocalDate dataFinal, LocalTime horaInicial, LocalTime horaFinal, Cliente cliente, StatusSolicitacao status, List<Orcamento> orcamentos) {
         this.id = id;
         this.servico = servico;
         this.data_inicial = dataInicial;
@@ -63,9 +65,10 @@ public class SolicitacaoServico implements Serializable{
         this.hora_final = horaFinal;
         this.cliente = cliente;
         this.status = status;
+        this.orcamentos = orcamentos;
     }
 
-    public SolicitacaoServico(TipoServico servico, LocalDate dataInicial, LocalDate dataFinal, LocalTime horaInicial, LocalTime horaFinal, Cliente cliente, StatusSolicitacao status, List<Orcamento> orcamentos) {
+    public SolicitacaoServico(TipoServico servico, LocalDate dataInicial, LocalDate dataFinal, LocalTime horaInicial, LocalTime horaFinal, Cliente cliente, StatusSolicitacao status) {
         this.servico = servico;
         this.data_inicial = dataInicial;
         this.data_final = dataFinal;
@@ -73,7 +76,6 @@ public class SolicitacaoServico implements Serializable{
         this.hora_final = horaFinal;
         this.cliente = cliente;
         this.status = status;
-        this.orcamentos = orcamentos;
     }
 
     public SolicitacaoServico() {
